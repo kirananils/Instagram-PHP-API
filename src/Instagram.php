@@ -139,10 +139,11 @@ class Instagram {
    * Get user activity feed
    *
    * @param integer [optional] $limit     Limit of returned results
+   * @param array [optional] $param       Parameters accepted by the endpoint 
    * @return mixed
    */
-  public function getUserFeed($limit = 0) {
-    return $this->_makeCall('users/self/feed', true, array('count' => $limit));
+  public function getUserFeed($limit = 0, $params = array()) {
+    return $this->_makeCall('users/self/feed', true, array_merge(array('count' => $limit), $params));
   }
 
   /**
