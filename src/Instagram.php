@@ -150,10 +150,11 @@ class Instagram {
    *
    * @param integer [optional] $id        Instagram user ID
    * @param integer [optional] $limit     Limit of returned results
+   * @param array [optional] $param       Parameters accepted by the endpoint 
    * @return mixed
    */
-  public function getUserMedia($id = 'self', $limit = 0) {
-    return $this->_makeCall('users/' . $id . '/media/recent', ($id === 'self'), array('count' => $limit));
+  public function getUserMedia($id = 'self', $limit = 0, $params = array()) {
+    return $this->_makeCall('users/' . $id . '/media/recent', true, array_merge(array('count' => $limit), $params));
   }
 
   /**
