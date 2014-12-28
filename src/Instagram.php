@@ -1,5 +1,7 @@
 <?php
 
+namespace MetzWeb\Instagram;
+
 /**
  * Instagram API class
  *
